@@ -37,6 +37,14 @@ const videoSelectOptionsSampleData = [
   { value: 'VIDEO_D', label: 'D 영상' },
 ]
 
+const effectSelectOptionsSampleData = [
+  { value: 'EFFECT_A', label: 'A 효과' },
+  { value: 'EFFECT_B', label: 'B 효과' },
+  { value: 'EFFECT_C', label: 'C 효과' },
+  { value: 'EFFECT_D', label: 'D 효과' },
+  { value: 'EFFECT_NULL', label: '효과 없음' },
+]
+
 const speedRateOptions = [
   { value: 0.5, label: '0.5 배속' },
   { value: 1.0, label: '1.0 배속' },
@@ -78,6 +86,7 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
                   <ContentCardFieldContainer>
                     <ContentInputField addonBefore="제목" placeholder="액션 제목을 입력해주세요." />
                     <ContentSelectField placeholder={'영상을 선택해주세요.'} options={videoSelectOptionsSampleData} />
+                    <ContentSelectField placeholder={'효과를 선택해주세요.'} options={effectSelectOptionsSampleData} />
                     <ContentCardTimePickerFieldContainer>
                       <ContentTimePickerField placeholder="시작 시간을 입력해주세요." />
                       <ContentTimePickerField placeholder="끝 시간을 입력해주세요." />
