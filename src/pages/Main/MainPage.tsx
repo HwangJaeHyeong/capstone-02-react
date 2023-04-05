@@ -16,6 +16,8 @@ import {
   ContentContainer,
   ContentInputField,
   ContentSelectField,
+  ContentSubmitButton,
+  ContentSubmitButtonTypo,
   ContentTimePickerField,
   HeaderContainer,
   HeaderLogoTypo,
@@ -98,6 +100,9 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
             <ContentAddButtonIcon />
           </ContentAddButton>
         </ContentAddContainer>
+        <ContentSubmitButton>
+          <ContentSubmitButtonTypo>영상 제작하기</ContentSubmitButtonTypo>
+        </ContentSubmitButton>
       </ContentContainer>
     </Root>
   )

@@ -151,3 +151,17 @@ export const ContentAddButtonTypo = styled(Typography)`
 export const ContentAddButtonIcon = styled(PlusCircleOutlined)`
   font-size: 18px;
 `
+
+export const ContentSubmitButton = styled(Button)`
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+`
+
+export const ContentSubmitButtonTypo = styled(Typography)`
+  font-size: 16px;
+`
