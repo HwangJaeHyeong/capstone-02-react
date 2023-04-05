@@ -43,7 +43,7 @@ const speedRateOptions = [
 ]
 
 export const MainPage: FC<MainPageProps> = ({ className }) => {
-  const [actionList, setActionList] = useState<{}[]>([{}])
+  const [actionList, setActionList] = useState<{}[]>([{}, {}, {}])
 
   const handleActionList = (type: 'ADD' | 'DELETE', actionIndex?: number) => () => {
     if (type === 'ADD') {
