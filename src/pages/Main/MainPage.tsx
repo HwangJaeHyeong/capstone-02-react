@@ -5,6 +5,7 @@ import {
   ContentAddButtonTypo,
   ContentAddContainer,
   ContentCard,
+  ContentCardCollapse,
   ContentCardContainer,
   ContentCardDeleteButton,
   ContentCardDeleteButtonIcon,
@@ -67,20 +68,27 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
         <ContentCardContainer>
           {actionList.map((actionItem, index) => (
             <ContentCard key={`content_card_${index}`}>
-              <ContentCardTitleTypo>액션 {index + 1}</ContentCardTitleTypo>
-              <ContentCardFieldContainer>
-                <ContentSelectField placeholder={'영상을 선택해주세요.'} options={videoSelectOptionsSampleData} />
-                <ContentCardTimePickerFieldContainer>
-                  <ContentTimePickerField placeholder="시작 시간을 입력해주세요." />
-                  <ContentTimePickerField placeholder="끝 시간을 입력해주세요." />
-                </ContentCardTimePickerFieldContainer>
-                <ContentSelectField placeholder={'배속을 선택해주세요.'} options={speedRateOptions} />
-                <ContentInputField addonBefore="자막" placeholder="자막을 입력해주세요." />
-              </ContentCardFieldContainer>
-              <ContentCardDeleteButton type={'primary'} onClick={handleActionList('DELETE', index)}>
-                <ContentCardDeleteButtonTypo>액션 삭제</ContentCardDeleteButtonTypo>
-                <ContentCardDeleteButtonIcon />
-              </ContentCardDeleteButton>
+              <ContentCardCollapse>
+                <ContentCardCollapse.Panel
+                  key={`content_card_${index}_1`}
+                  header={<ContentCardTitleTypo>액션 {index + 1}</ContentCardTitleTypo>}
+                >
+                  <ContentCardFieldContainer>
+                    <ContentInputField addonBefore="제목" placeholder="액션 제목을 입력해주세요." />
+                    <ContentSelectField placeholder={'영상을 선택해주세요.'} options={videoSelectOptionsSampleData} />
+                    <ContentCardTimePickerFieldContainer>
+                      <ContentTimePickerField placeholder="시작 시간을 입력해주세요." />
+                      <ContentTimePickerField placeholder="끝 시간을 입력해주세요." />
+                    </ContentCardTimePickerFieldContainer>
+                    <ContentSelectField placeholder={'배속을 선택해주세요.'} options={speedRateOptions} />
+                    <ContentInputField addonBefore="자막" placeholder="자막을 입력해주세요." />
+                  </ContentCardFieldContainer>
+                  <ContentCardDeleteButton type={'primary'} onClick={handleActionList('DELETE', index)}>
+                    <ContentCardDeleteButtonTypo>액션 삭제</ContentCardDeleteButtonTypo>
+                    <ContentCardDeleteButtonIcon />
+                  </ContentCardDeleteButton>
+                </ContentCardCollapse.Panel>
+              </ContentCardCollapse>
             </ContentCard>
           ))}
         </ContentCardContainer>

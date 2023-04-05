@@ -1,5 +1,5 @@
 import { DeleteOutlined, PlusCircleOutlined, ShareAltOutlined } from '@ant-design/icons'
-import { Button, Input, Select, TimePicker, Typography } from 'antd'
+import { Button, Collapse, Input, Select, TimePicker, Typography } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
 import styled from 'styled-components'
 
@@ -66,19 +66,11 @@ export const ContentCardContainer = styled.div`
   gap: 10px;
 `
 
-export const ContentCard = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px #c9c9c9 solid;
-  border-radius: 8px;
-`
+export const ContentCard = styled.div``
+
+export const ContentCardCollapse = styled(Collapse)``
 
 export const ContentCardTitleTypo = styled(Typography)`
-  font-size: 24px;
   font-weight: 500;
 `
 
@@ -124,6 +116,7 @@ export const ContentCardDeleteButton = styled(Button)`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-top: 15px;
   &:hover {
     &&& {
       background: #ff0000aa;
