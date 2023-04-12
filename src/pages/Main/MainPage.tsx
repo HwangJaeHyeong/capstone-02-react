@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   ContentAddButton,
   ContentAddButtonIcon,
@@ -70,6 +71,7 @@ const speedRateOptions = [
 
 export const MainPage: FC<MainPageProps> = ({ className }) => {
   const [actionList, setActionList] = useState<{}[]>([{}, {}, {}])
+  const navigate = useNavigate()
 
   const handleActionList = (type: 'ADD' | 'DELETE', actionIndex?: number) => () => {
     if (type === 'ADD') {
@@ -80,6 +82,10 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
       setActionList((prev) => prev.filter((_, index) => index !== actionIndex))
       return
     }
+  }
+
+  const onClickSubmitButton = () => {
+    navigate('/result')
   }
 
   return (
@@ -130,7 +136,7 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
             <ContentAddButtonIcon />
           </ContentAddButton>
         </ContentAddContainer>
-        <ContentSubmitButton>
+        <ContentSubmitButton onClick={onClickSubmitButton}>
           <ContentSubmitButtonTypo>영상 제작하기</ContentSubmitButtonTypo>
         </ContentSubmitButton>
       </ContentContainer>
